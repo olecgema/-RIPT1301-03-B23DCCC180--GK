@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="b1.css">
+</head>
+<body>
+    <h1>Máy tính</h1>
+    <div class="nhapso">
+        <input type="number" id="soa" placeholder="Nhap so A">
+        <input type="number" id="sob" placeholder="Nhap so B">
+    
+
+    </div>
+    <div class="phepbam">
+        <button onclick="pheptinh('SUM')" >SUM</button>
+        <button onclick="pheptinh('SUBTRACT')" >SUBTRACT</button>
+        <button onclick="pheptinh('MULTIPLY')" >MULTIPLY</button>
+        <button onclick="pheptinh('DIVIDE')" >DIVIDE</button>
+        <button onclick="reset()" >RESET</button>
+
+    </div>
+    
+</body>
+</html>
+<script>
+  
+    function pheptinh(op){
+        var soa = parseFloat(document.getElementById('soa').value)
+        var sob = parseFloat(document.getElementById('sob').value)
+        if (isNaN(soa) || isNaN(sob)){
+            alert("Nhập vào ô trống")
+            return
+        } else {
+            switch(op){
+                case 'SUM':
+                    var tong=soa + sob
+                    alert (tong)
+                    break;
+                case 'SUBTRACT':
+                    var hieu= soa-sob
+                    alert(hieu)
+                    break;
+                case 'MULTIPLY':
+                    var tich=soa * sob
+                    alert (tich)
+                    break;
+                case 'DIVIDE':
+                    if (sob == 0){
+                        alert ("Số B phải khác 0")
+                    }else{
+                        thuong= soa/ sob
+                        alert(thuong)
+                        break;
+                    }
+                    
+                
+            }
+           
+        }
+    }
+    function reset(){
+        document.getElementById('soa').value = "";
+        document.getElementById('sob').value = "";
+
+
+
+
+    }
+
+</script>

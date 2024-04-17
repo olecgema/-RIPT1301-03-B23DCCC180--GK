@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <audio id="mus">
+        <source src="iPhone6NhacChuong-V.A-3862494.mp3">
+    </audio>
+    <link rel="stylesheet" href="b2.css">
+</head>
+<body>
+    <h1>Đồng hồ đếm ngược</h1>
+    <div id="Nhapthoigian">
+        <input type="number" id="phut" placeholder="Phut">
+        <input type="number" id="giay" placeholder="Giay">
+        <br> 
+        <button onclick="start()">Start</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <div class="Hienthi">
+        <span id="m">Phut</span>:
+        <span id="s">Giay</span>
+    </div>
+    <p id="end-message" class="end-message"></p>
+    
+</body>
+</html>
+<script>
+    var m=null
+    var s=null
+    var timeout =null
+    var amthanh=document.getElementById("mus")
+    var errorMessage = document.getElementById("error-message");
+    function start()
+
+{
+    if (m === null)
+    {
+        m = parseInt(document.getElementById('phut').value);
+        s = parseInt(document.getElementById('giay').value);
+    }
+    if (isNaN(m) || isNaN(s)){
+            alert("Nhập vào ô trống")
+            return
+    }
+
+    if (s === -1){
+        m -= 1;
+        s = 59;
+    }
+
+
+    if (m == -1){
+        clearTimeout(timeout);
+
+        amthanh.play()
+
+        errorMessage.textContent = "Het Gio";
+
+        return false;
+    }
+    document.getElementById('m').innerText = m.toString();
+    document.getElementById('s').innerText = s.toString();
+ 
+
+    timeout = setTimeout(function(){
+        s--;
+        start();
+    }, 1000);
+}
+    function reset() {
+
+    location.reload();
+    }
+
+
+</script>
