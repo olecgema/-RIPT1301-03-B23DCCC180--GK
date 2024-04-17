@@ -22,7 +22,7 @@
         <span id="m">Phut</span>:
         <span id="s">Giay</span>
     </div>
-    <p id="end-message" class="end-message"></p>
+    <h1 id="error-message" class="error-message" ></h1>
     
 </body>
 </html>
@@ -32,18 +32,22 @@
     var timeout =null
     var amthanh=document.getElementById("mus")
     var errorMessage = document.getElementById("error-message");
-    function start()
+    
+    function start() {
+    var phutInput = document.getElementById('phut').value.trim();
+    var giayInput = document.getElementById('giay').value.trim();
 
-{
-    if (m === null)
-    {
-        m = parseInt(document.getElementById('phut').value);
-        s = parseInt(document.getElementById('giay').value);
+ 
+    if (phutInput === "" || giayInput === "") {
+        alert("Kiểm Tra ô còn rỗng");
+        return;
     }
-    if (isNaN(m) || isNaN(s)){
-            alert("Nhập vào ô trống")
-            return
+
+    if (m === null) {
+        m = parseInt(phutInput);
+        s = parseInt(giayInput);
     }
+
 
     if (s === -1){
         m -= 1;
@@ -56,7 +60,7 @@
 
         amthanh.play()
 
-        errorMessage.textContent = "Het Gio";
+        errorMessage.textContent = "Het gio";
 
         return false;
     }
