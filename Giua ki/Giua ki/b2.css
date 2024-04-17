@@ -1,0 +1,40 @@
+div {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    display: block;
+    text-align: center;
+}
+div input{
+    width: 100px;
+    height: 50px;
+    border: 5px solid rgb(57, 207, 124);
+    border-radius: 10%;
+
+}
+div button{
+    width: 100px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+body {
+    background-image:url(https://wallpapers.com/images/featured/cute-pink-hello-kitty-7479l81o21tk9oko.jpg) ;
+    background-size: contain;
+
+    padding: 100px;
+
+}
+button{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.Hienthi{
+    margin-top: 30px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
